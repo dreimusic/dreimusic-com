@@ -1,0 +1,9 @@
+.env
+.DS_Store
+
+# raw source files dropped in for editing - the site only uses the
+# processed copies committed under assets/
+DSC01674.jpg
+PROFILE PIC.jpg
+Screenshot *.png
+Video Example*.mp4
