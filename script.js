@@ -9,16 +9,15 @@ if (window.self !== window.top) {
 }
 
 /**
- * Config — swap these for real values before going live.
+ * Config.
  * CHECKOUT_URL is a Dodo "Short Link" (created once via their API, not the
  * plain product share link) with redirect_url baked in via
  * static_checkout_params, since Dodo ignores query params appended at
- * click-time on a short link. Recreate it if the redirect target changes
- * (e.g. moving off dreimusic.com), and swap in a live-mode short link when
- * this goes live.
+ * click-time on a short link. Recreate it (and update this) if the redirect
+ * target ever changes. This is the LIVE-mode link - real charges happen here.
  */
 const CONFIG = {
-  CHECKOUT_URL: "https://dodo.pe/buy-harmony-blueprint",
+  CHECKOUT_URL: "https://dodo.pe/get-harmony-blueprint",
   APP_URL: "https://harmonyblueprint.dreimusic.com",
 };
 
