@@ -32,6 +32,10 @@ function openCheckout() {
   const iframe = document.createElement("iframe");
   iframe.src = CONFIG.CHECKOUT_URL;
   iframe.title = "Checkout";
+  // grants the Payment Request API to this iframe - without it, Google
+  // Pay/Apple Pay can't render inline and fall back to a popup, which
+  // browsers block by default coming from a nested iframe
+  iframe.allow = "payment";
   wrap.appendChild(iframe);
   overlay.hidden = false;
   document.body.style.overflow = "hidden";
