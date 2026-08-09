@@ -14,10 +14,13 @@ if (window.self !== window.top) {
  * plain product share link) with redirect_url baked in via
  * static_checkout_params, since Dodo ignores query params appended at
  * click-time on a short link. Recreate it (and update this) if the redirect
- * target ever changes. This is the LIVE-mode link - real charges happen here.
+ * target ever changes - it's currently pinned to
+ * https://dreimusic.com/harmony-blueprint/, so moving this page again means
+ * recreating the short link too. This is the LIVE-mode link - real charges
+ * happen here.
  */
 const CONFIG = {
-  CHECKOUT_URL: "https://dodo.pe/get-harmony-blueprint",
+  CHECKOUT_URL: "https://dodo.pe/buy-harmony-blueprint-v2",
   APP_URL: "https://harmonyblueprint.dreimusic.com",
 };
 

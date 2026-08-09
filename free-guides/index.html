@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>10 Free Visual MIDI Guides — Drei Music</title>
+  <meta name="description" content="Get 10 free chord progressions across three moods — Natural Minor, Harmonic Minor, and Phrygian. Drop them into your DAW and start building melodies today." />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="bp-grid" aria-hidden="true"></div>
+  <div class="corner-mark corner-mark--tl" aria-hidden="true"></div>
+  <div class="corner-mark corner-mark--tr" aria-hidden="true"></div>
+  <div class="corner-mark corner-mark--bl" aria-hidden="true"></div>
+  <div class="corner-mark corner-mark--br" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#hero-heading">Skip to content</a>
+
+  <header class="site-nav">
+    <div class="site-nav__inner">
+      <a href="/" class="wordmark-link"><span class="wordmark">Drei<span class="wordmark__accent">Music</span></span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container container--narrow" style="text-align: center;">
+        <p class="eyebrow eyebrow--center">Free Starter Pack</p>
+        <h1 id="hero-heading" class="glow-title">10 Free Visual<br />MIDI Guides</h1>
+        <p class="hero__sub" style="margin-left: auto; margin-right: auto; text-align: center;">
+          10 proven chord progressions across three moods — Natural Minor, Harmonic
+          Minor, and Phrygian. Drop them into your DAW and start building melodies
+          today. Completely free, no card required.
+        </p>
+
+        <form id="leadForm" class="lead-form">
+          <input type="text" name="company" class="lead-form__honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <label class="lead-form__label" for="leadEmail">Email address</label>
+          <div class="lead-form__row">
+            <input type="email" id="leadEmail" name="email" placeholder="you@example.com" required autocomplete="email" />
+            <button type="submit" class="btn btn--cta btn--lg" id="leadSubmitBtn">Send Me The Guides</button>
+          </div>
+          <p class="lead-form__microcopy">No spam. Unsubscribe anytime.</p>
+          <p id="leadFormError" class="lead-form__error" hidden></p>
+        </form>
+
+        <div id="leadSuccess" class="lead-success" hidden>
+          <p class="eyebrow eyebrow--center">You're In</p>
+          <h2>Check your download.</h2>
+          <p>Your 10 free guides are ready — the download should start automatically. If it doesn't, use the button below.</p>
+          <a id="leadDownloadLink" class="btn btn--cta btn--lg" href="#" download>Download The Guides</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span>© <span id="year"></span> Drei Music</span>
+      <a href="mailto:dreisavu@gmail.com">Contact</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
