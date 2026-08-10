@@ -4,7 +4,6 @@ const form = document.getElementById("leadForm");
 const submitBtn = document.getElementById("leadSubmitBtn");
 const errorEl = document.getElementById("leadFormError");
 const successEl = document.getElementById("leadSuccess");
-const downloadLink = document.getElementById("leadDownloadLink");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -34,18 +33,8 @@ form.addEventListener("submit", async (e) => {
       throw new Error(data.error || "Something went wrong. Try again.");
     }
 
-    downloadLink.href = data.downloadUrl;
     form.hidden = true;
     successEl.hidden = false;
-
-    // trigger the download automatically since this all happens as a
-    // direct result of the user's own submit click
-    const auto = document.createElement("a");
-    auto.href = data.downloadUrl;
-    auto.download = "";
-    document.body.appendChild(auto);
-    auto.click();
-    auto.remove();
   } catch (err) {
     errorEl.textContent = err.message || "Something went wrong. Try again.";
     errorEl.hidden = false;
