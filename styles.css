@@ -934,7 +934,7 @@ p {
 }
 
 .product-card__media {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 1 / 1;
   background: var(--bp-bg-deep);
   border-bottom: 1px solid var(--bp-line);
   display: flex;
