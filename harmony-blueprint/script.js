@@ -22,6 +22,16 @@ if (window.self !== window.top) {
 const CONFIG = {
   CHECKOUT_URL: "https://dodo.pe/buy-harmony-blueprint-v2",
   APP_URL: "https://harmonyblueprint.dreimusic.com",
+  // Flip these to true (and drop the real files into assets/downloads/) once
+  // each platform's installer is packaged and, for Mac, notarized. Until
+  // then the thank-you screen shows a "launching very soon" note instead of
+  // a broken/unnotarized download.
+  PLUGIN_DOWNLOADS: {
+    macReady: false,
+    macUrl: "/assets/downloads/harmony-blueprint-plugin-mac.zip",
+    winReady: false,
+    winUrl: "/assets/downloads/harmony-blueprint-plugin-win.zip",
+  },
 };
 
 document.getElementById("year").textContent = new Date().getFullYear();
@@ -72,6 +82,21 @@ function showThankYou({ licenseKey }) {
   appLink.href = CONFIG.APP_URL;
   overlay.hidden = false;
   document.body.style.overflow = "hidden";
+
+  const { macReady, macUrl, winReady, winUrl } = CONFIG.PLUGIN_DOWNLOADS;
+  const macBtn = document.getElementById("tyMacDownload");
+  const winBtn = document.getElementById("tyWinDownload");
+  const note = document.getElementById("tyDownloadsNote");
+
+  if (macReady) {
+    macBtn.href = macUrl;
+    macBtn.hidden = false;
+  }
+  if (winReady) {
+    winBtn.href = winUrl;
+    winBtn.hidden = false;
+  }
+  note.hidden = macReady && winReady;
 
   document.getElementById("tyCopyBtn").addEventListener("click", () => {
     if (!licenseKey) return;

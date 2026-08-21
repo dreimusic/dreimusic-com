@@ -26,6 +26,15 @@
   box-sizing: border-box;
 }
 
+/* the [hidden] attribute's UA-stylesheet display:none always loses to any
+   author rule that sets display on the same element (e.g. .btn's
+   display:inline-flex), regardless of specificity - author rules beat UA
+   rules outright. This one global rule keeps [hidden] authoritative
+   everywhere instead of needing a bespoke override per component. */
+[hidden] {
+  display: none !important;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -355,6 +364,15 @@ p {
   margin: 14px 0 0;
   font-size: 0.85rem;
   color: var(--bp-muted);
+}
+
+.hero__daws {
+  margin: 10px 0 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--bp-cyan-bright);
 }
 
 .frame-shot {
@@ -772,8 +790,38 @@ p {
   white-space: nowrap;
 }
 
+.ty-downloads {
+  margin-bottom: 18px;
+}
+
+.ty-downloads__label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bp-muted);
+  margin: 0 0 10px;
+}
+
+.ty-downloads__row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ty-downloads__row .btn {
+  width: 100%;
+}
+
+.ty-downloads__note {
+  font-size: 0.82rem;
+  color: var(--bp-muted);
+  margin: 8px 0 0;
+}
+
 .ty-app-link {
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .ty-microcopy {
