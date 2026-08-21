@@ -20,6 +20,11 @@ if (window.self !== window.top) {
  * happen here.
  */
 const CONFIG = {
+  // Flip to true once the plugin (Windows install + Mac notarization) is
+  // actually ready to hand out - until then the buy buttons say "Coming
+  // Very Soon" and don't open checkout at all, so nobody pays for
+  // something we can't deliver yet.
+  SALES_LIVE: false,
   CHECKOUT_URL: "https://dodo.pe/buy-harmony-blueprint-v2",
   APP_URL: "https://harmonyblueprint.dreimusic.com",
   // Flip these to true (and drop the real files into assets/downloads/) once
@@ -38,7 +43,22 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 // ---------- checkout overlay ----------
 
-function openCheckout() {
+function flashComingSoon(btn) {
+  if (btn.dataset.flashing) return; // already mid-flash, don't stack timers
+  btn.dataset.flashing = "1";
+  const original = btn.innerHTML;
+  btn.textContent = "Launching very soon — check back!";
+  setTimeout(() => {
+    btn.innerHTML = original;
+    delete btn.dataset.flashing;
+  }, 2500);
+}
+
+function openCheckout(e) {
+  if (!CONFIG.SALES_LIVE) {
+    flashComingSoon(e.currentTarget);
+    return;
+  }
   const overlay = document.getElementById("checkoutOverlay");
   const wrap = document.getElementById("coFrameWrap");
   wrap.innerHTML = "";
