@@ -20,22 +20,17 @@ if (window.self !== window.top) {
  * happen here.
  */
 const CONFIG = {
-  // Flip to true once the plugin (Windows install + Mac notarization) is
-  // actually ready to hand out - until then the buy buttons say "Coming
-  // Very Soon" and don't open checkout at all, so nobody pays for
-  // something we can't deliver yet.
-  SALES_LIVE: false,
+  SALES_LIVE: true,
   CHECKOUT_URL: "https://dodo.pe/buy-harmony-blueprint-v2",
   APP_URL: "https://harmonyblueprint.dreimusic.com",
-  // Flip these to true (and drop the real files into assets/downloads/) once
-  // each platform's installer is packaged and, for Mac, notarized. Until
-  // then the thank-you screen shows a "launching very soon" note instead of
-  // a broken/unnotarized download.
+  // Mac build is signed but not yet notarized by Apple - shipping anyway
+  // per product decision, with a Gatekeeper workaround note on the
+  // thank-you screen until the notarized build is ready to swap in.
   PLUGIN_DOWNLOADS: {
-    macReady: false,
-    macUrl: "/assets/downloads/harmony-blueprint-plugin-mac.zip",
-    winReady: false,
-    winUrl: "/assets/downloads/harmony-blueprint-plugin-win.zip",
+    macReady: true,
+    macUrl: "/assets/downloads/harmony-blueprint-installer-mac.pkg",
+    winReady: true,
+    winUrl: "/assets/downloads/harmony-blueprint-installer-win.exe",
   },
 };
 
