@@ -23,9 +23,8 @@ const CONFIG = {
   SALES_LIVE: true,
   CHECKOUT_URL: "https://dodo.pe/buy-harmony-blueprint-v2",
   APP_URL: "https://harmonyblueprint.dreimusic.com",
-  // Mac build is signed but not yet notarized by Apple - shipping anyway
-  // per product decision, with a Gatekeeper workaround note on the
-  // thank-you screen until the notarized build is ready to swap in.
+  // Mac build is fully notarized and stapled as of 2026-08-22 - no
+  // Gatekeeper warning for anyone installing this file.
   PLUGIN_DOWNLOADS: {
     macReady: true,
     macUrl: "/assets/downloads/harmony-blueprint-installer-mac.pkg",
