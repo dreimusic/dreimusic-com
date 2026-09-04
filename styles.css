@@ -495,14 +495,20 @@ p {
 
 @media (min-width: 700px) {
   .demo-grid {
-    grid-template-columns: repeat(2, minmax(220px, 340px));
+    grid-template-columns: repeat(2, minmax(220px, 320px));
     justify-content: center;
+  }
+}
+
+@media (min-width: 980px) {
+  .demo-grid {
+    grid-template-columns: repeat(3, minmax(200px, 300px));
   }
 }
 
 .demo-video {
   width: 100%;
-  max-width: 340px;
+  max-width: 320px;
 }
 
 .demo-video video {
