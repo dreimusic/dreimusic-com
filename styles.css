@@ -366,6 +366,11 @@ p {
   color: var(--bp-muted);
 }
 
+.hero__owned a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .hero__daws {
   margin: 10px 0 0;
   font-size: 0.8rem;
