@@ -606,6 +606,24 @@ p {
   margin-bottom: 8px;
 }
 
+.trust__copy .social-stats {
+  margin-top: 24px;
+}
+
+.trust__copy .social-stats__handle {
+  margin: 12px 0 0;
+  text-align: center;
+}
+
+@media (min-width: 700px) {
+  .trust__copy .social-stats {
+    justify-content: flex-start;
+  }
+  .trust__copy .social-stats__handle {
+    text-align: left;
+  }
+}
+
 /* ---------- pricing ---------- */
 
 .pricing-card {
