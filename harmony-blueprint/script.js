@@ -66,6 +66,11 @@ function openCheckout(e) {
   wrap.appendChild(iframe);
   overlay.hidden = false;
   document.body.style.overflow = "hidden";
+
+  // ad blockers can strip the pixel entirely - never let that break checkout
+  if (typeof fbq === "function") {
+    fbq("track", "InitiateCheckout", { value: 39.95, currency: "USD" });
+  }
 }
 
 function closeCheckout() {
@@ -133,6 +138,13 @@ function showThankYou({ licenseKey }) {
   if (status !== "succeeded") return;
 
   showThankYou({ licenseKey: params.get("license_key") });
+
+  // fires once, right when a real payment is confirmed by Dodo's own
+  // redirect - not on checkout open, so ad platforms learn from actual
+  // buyers rather than everyone who just looked at the checkout iframe
+  if (typeof fbq === "function") {
+    fbq("track", "Purchase", { value: 39.95, currency: "USD" });
+  }
 
   // strip the query string (license key shouldn't linger in the address bar
   // or be re-shown on a plain refresh) while keeping the rest of the URL

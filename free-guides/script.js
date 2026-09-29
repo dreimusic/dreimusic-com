@@ -35,6 +35,9 @@ form.addEventListener("submit", async (e) => {
 
     form.hidden = true;
     successEl.hidden = false;
+    if (typeof fbq === "function") {
+      fbq("track", "Lead");
+    }
   } catch (err) {
     errorEl.textContent = err.message || "Something went wrong. Try again.";
     errorEl.hidden = false;
