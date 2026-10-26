@@ -451,6 +451,44 @@ p {
   font-size: 0.96rem;
 }
 
+/* library layers: the badge is a headline number, not a step counter */
+.steps--stats .step__num {
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  padding: 6px 13px;
+}
+
+/* what's-new list inside a prose section */
+.whatsnew {
+  list-style: none;
+  margin: 28px auto 0;
+  padding: 0;
+  max-width: 680px;
+  display: grid;
+  gap: 14px;
+  text-align: left;
+}
+
+.whatsnew li {
+  position: relative;
+  padding-left: 30px;
+  color: var(--bp-muted);
+  font-size: clamp(0.98rem, 1.4vw, 1.06rem);
+}
+
+.whatsnew li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 800;
+  color: var(--bp-cyan);
+}
+
+.whatsnew strong {
+  color: var(--bp-white);
+}
+
 /* ---------- split sections ---------- */
 
 .split {
