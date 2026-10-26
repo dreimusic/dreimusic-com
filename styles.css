@@ -580,6 +580,13 @@ p {
   margin-bottom: 10px;
 }
 
+/* the infinity glyph is drawn small in the page font, so scale it up to match the numbers */
+.steps--stats .step__num--inf {
+  font-size: 1.75rem;
+  line-height: 0.85;
+  padding: 5px 14px 7px;
+}
+
 .steps--stats .step h3 {
   font-size: 1.05rem;
   margin-bottom: 0.4em;
