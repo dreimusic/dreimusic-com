@@ -353,6 +353,19 @@ p {
   }
 }
 
+.hero__value {
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--bp-white);
+  max-width: 30ch;
+  margin: 0 0 16px;
+}
+
+.hero__value span {
+  color: var(--bp-cyan-bright);
+}
+
 .hero__sub {
   color: var(--bp-muted);
   font-size: clamp(1rem, 1.6vw, 1.15rem);
@@ -458,8 +471,9 @@ p {
   padding: 6px 13px;
 }
 
-/* what's-new list inside a prose section */
-.whatsnew {
+/* what's-new list inside a prose section; also the "why it's different" checklist */
+.whatsnew,
+.checklist {
   list-style: none;
   margin: 28px auto 0;
   padding: 0;
@@ -469,14 +483,21 @@ p {
   text-align: left;
 }
 
-.whatsnew li {
+.checklist {
+  margin-left: 0;
+  margin-top: 22px;
+}
+
+.whatsnew li,
+.checklist li {
   position: relative;
   padding-left: 30px;
   color: var(--bp-muted);
   font-size: clamp(0.98rem, 1.4vw, 1.06rem);
 }
 
-.whatsnew li::before {
+.whatsnew li::before,
+.checklist li::before {
   content: "✓";
   position: absolute;
   left: 0;
@@ -485,7 +506,8 @@ p {
   color: var(--bp-cyan);
 }
 
-.whatsnew strong {
+.whatsnew strong,
+.checklist strong {
   color: var(--bp-white);
 }
 
