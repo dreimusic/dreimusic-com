@@ -1358,6 +1358,13 @@ p {
   }
 }
 
+/* three cards: the last one spans the full row so the grid stays balanced */
+@media (min-width: 700px) {
+  .testimonials-grid--3 .testimonial-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
 .testimonial-card {
   border: 1px solid var(--bp-line);
   border-radius: var(--radius);
@@ -1381,10 +1388,15 @@ p {
 
 .testimonial-card__meta {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
+  gap: 4px 8px;
   font-size: 0.82rem;
   color: var(--bp-muted);
+}
+
+.testimonial-card__src {
+  opacity: 0.8;
 }
 
 .testimonial-card__handle {
