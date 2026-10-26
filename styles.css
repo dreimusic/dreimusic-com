@@ -393,18 +393,74 @@ p {
   margin-top: 16px;
 }
 
-.split__copy .split__link {
-  margin-top: 20px;
+/* "why it's different": snap to scale vs Harmony Blueprint, side by side */
+.compare {
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
 }
 
-.split__link a {
+@media (min-width: 520px) {
+  .compare {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.compare__col {
+  border: 1px solid var(--bp-line);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  background: var(--bp-panel);
+}
+
+.compare__col h3 {
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bp-muted);
+  margin: 0 0 12px;
+}
+
+.compare__col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 9px;
+}
+
+.compare__col li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 0.98rem;
+  color: var(--bp-muted);
+}
+
+.compare__col li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--bp-muted);
+}
+
+.compare__col--hb {
+  border-color: var(--bp-cyan);
+  background: rgba(74, 179, 253, 0.09);
+}
+
+.compare__col--hb h3 {
   color: var(--bp-cyan-bright);
-  font-weight: 700;
-  text-decoration: none;
 }
 
-.split__link a:hover {
-  text-decoration: underline;
+.compare__col--hb li {
+  color: var(--bp-white);
+  font-weight: 600;
+}
+
+.compare__col--hb li::before {
+  content: "✓";
+  font-weight: 800;
+  color: var(--bp-cyan);
 }
 
 .hero__sub {
