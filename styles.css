@@ -561,11 +561,35 @@ p {
   font-size: 0.96rem;
 }
 
-/* library layers: the badge is a headline number, not a step counter */
+/* library cards: compact, badge is a headline number, text stays left-aligned
+   even when the cards sit inside a centered prose section */
+.steps--stats {
+  margin-top: 30px;
+  gap: 16px;
+}
+
+.steps--stats .step {
+  padding: 18px 18px 20px;
+  text-align: left;
+}
+
 .steps--stats .step__num {
   font-size: 1.15rem;
   letter-spacing: 0.02em;
-  padding: 6px 13px;
+  padding: 5px 12px;
+  margin-bottom: 10px;
+}
+
+.steps--stats .step h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.4em;
+}
+
+.steps--stats .step p {
+  text-align: left;
+  max-width: none;
+  font-size: 0.92rem;
+  line-height: 1.5;
 }
 
 /* what's-new list inside a prose section; also the "why it's different" checklist */
