@@ -366,6 +366,41 @@ p {
   color: var(--bp-cyan-bright);
 }
 
+/* 7-day money-back guarantee line (pricing card, final CTA) */
+.hero__guarantee {
+  color: var(--bp-white);
+  font-weight: 700;
+}
+
+.guarantee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 44ch;
+  margin: 18px auto 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--bp-muted);
+  text-align: left;
+}
+
+.guarantee strong {
+  color: var(--bp-white);
+}
+
+.guarantee__icon {
+  width: 1.45rem;
+  height: 1.45rem;
+  flex: none;
+  color: #3ddc84;
+}
+
+.guarantee--center {
+  justify-content: center;
+  margin-top: 16px;
+}
+
 /* "theory takes ten years" -> checked off */
 .promise__title span {
   display: block;
