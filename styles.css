@@ -1518,3 +1518,52 @@ p {
 .lead-success p {
   color: var(--bp-muted);
 }
+
+/* footer link group */
+.site-footer__links {
+  display: flex;
+  gap: 18px;
+}
+
+/* legal pages (privacy policy) */
+.legal {
+  padding-top: 24px;
+  padding-bottom: 40px;
+}
+
+.legal h1 {
+  margin-bottom: 6px;
+}
+
+.legal__updated {
+  color: var(--bp-muted);
+  font-size: 0.9rem;
+  margin: 0 0 28px;
+}
+
+.legal h2 {
+  font-size: 1.2rem;
+  margin: 34px 0 10px;
+}
+
+.legal p,
+.legal li {
+  color: var(--bp-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.legal ul {
+  padding-left: 22px;
+  margin: 10px 0;
+  display: grid;
+  gap: 10px;
+}
+
+.legal strong {
+  color: var(--bp-white);
+}
+
+.legal a {
+  color: var(--bp-cyan-bright);
+}
