@@ -1,5 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/hb/:src(tt|ig|yt|ys|em)", "destination": "/harmony-blueprint/index.html" }
-  ]
-}
