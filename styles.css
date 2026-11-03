@@ -1602,3 +1602,8 @@ p {
 .legal a {
   color: var(--bp-cyan-bright);
 }
+
+/* line of text right after a row of stat cards */
+.steps--stats + p {
+  margin-top: 26px;
+}
