@@ -1679,3 +1679,17 @@ p {
   margin-top: 24px;
   font-size: 0.9rem;
 }
+
+/* melody-view screenshot under the formula */
+.formula__shot {
+  max-width: 880px;
+  margin: 34px auto 0;
+}
+
+.formula__shot figcaption {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--bp-muted);
+}
